@@ -28,10 +28,9 @@ export default function Navbar() {
   );
 
   const linkClass = ({ isActive }) =>
-    `rounded-xl px-4 py-3 text-sm font-semibold transition-all duration-300 ${
-      isActive
-        ? "bg-orange-100 text-orange-800 shadow-sm"
-        : "text-stone-700 hover:bg-orange-50 hover:text-orange-700"
+    `rounded-xl px-4 py-3 text-sm font-semibold transition-all duration-300 ${isActive
+      ? "bg-orange-100 text-orange-800 shadow-sm"
+      : "text-stone-700 hover:bg-orange-50 hover:text-orange-700"
     }`;
 
   const propertyButtonClass =
@@ -60,17 +59,11 @@ export default function Navbar() {
             className="flex min-w-0 items-center gap-3 sm:gap-4"
             aria-label="Shri Radhe Krishna home"
           >
-            {siteConfig.logo ? (
-              <img
-                src={siteConfig.logo}
-                alt="Shri Radhe Krishna logo"
-                className="h-12 w-12 shrink-0 object-contain sm:h-16 sm:w-16"
-              />
-            ) : (
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-amber-300 bg-gradient-to-br from-amber-100 to-orange-200 text-2xl font-bold text-[#842f13] shadow-sm sm:h-16 sm:w-16 sm:text-3xl">
-                ॐ
-              </div>
-            )}
+            <img
+              src="/cottage-logo.png"
+              alt="Shri Radhe Krishna Real Estate"
+              className="h-12 w-12 rounded-full object-cover shrink-0 border-2 border-amber-300"
+            />
 
             <div className="min-w-0">
               <span className="block text-lg font-extrabold tracking-tight text-[#762b13] sm:text-2xl lg:text-3xl">
@@ -96,9 +89,8 @@ export default function Navbar() {
 
           {/* Navigation Links */}
           <nav
-            className={`${
-              menuOpen ? "flex" : "hidden"
-            } absolute left-0 right-0 top-full max-h-[80vh] flex-col gap-2 overflow-y-auto border-b border-amber-200 bg-[#fffdf8] p-4 shadow-xl md:static md:flex md:max-h-none md:flex-row md:items-center md:gap-1 md:overflow-visible md:border-0 md:bg-transparent md:p-0 md:shadow-none`}
+            className={`${menuOpen ? "flex" : "hidden"
+              } absolute left-0 right-0 top-full max-h-[80vh] flex-col gap-2 overflow-y-auto border-b border-amber-200 bg-[#fffdf8] p-4 shadow-xl md:static md:flex md:max-h-none md:flex-row md:items-center md:gap-1 md:overflow-visible md:border-0 md:bg-transparent md:p-0 md:shadow-none`}
           >
             {navItems.map((item) => (
               <NavLink
@@ -116,11 +108,10 @@ export default function Navbar() {
             <NavLink
               to="/list-your-property"
               onClick={() => handleNavClick("/list-your-property")}
-              className={`${propertyButtonClass} ${
-                location.pathname === "/list-your-property"
-                  ? "ring-2 ring-amber-300 ring-offset-2"
-                  : ""
-              } md:ml-2`}
+              className={`${propertyButtonClass} ${location.pathname === "/list-your-property"
+                ? "ring-2 ring-amber-300 ring-offset-2"
+                : ""
+                } md:ml-2`}
             >
               List Your Property
               <span aria-hidden="true">↗</span>
