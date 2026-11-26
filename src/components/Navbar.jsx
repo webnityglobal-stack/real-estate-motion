@@ -60,7 +60,7 @@ export default function Navbar() {
             aria-label="Shri Radhe Krishna home"
           >
             <img
-              src={`${import.meta.env.BASE_URL}logo.png`}
+               src={`${import.meta.env.BASE_URL}cottage-logo.png`}
               alt="Shri Radhe Krishna Real Estate"
               className="h-12 w-12 rounded-full object-cover shrink-0 border-2 border-amber-300"
             />
