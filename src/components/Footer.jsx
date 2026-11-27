@@ -1,8 +1,10 @@
 import { Link, useLocation } from "react-router-dom";
 import siteConfig from "../config/siteConfig";
+import { useState } from "react";
 
 export default function Footer() {
   const location = useLocation();
+  const [logoError, setLogoError] = useState(false);
 
   const contact = siteConfig.contact || {};
   const social = siteConfig.social || {};
@@ -55,27 +57,27 @@ export default function Footer() {
             onClick={() => handleLinkClick("/")}
             className="group mb-5 inline-flex items-center gap-4"
           >
-            {siteConfig.logo ? (
+            {siteConfig.logo && !logoError ? (
               <img
                 src={siteConfig.logo}
-                alt="Shri Radhe Krishna logo"
+                alt={`${siteConfig.brandName || "Website"} logo`}
+                onError={() => setLogoError(true)}
                 className="h-14 w-14 shrink-0 rounded-xl object-contain sm:h-16 sm:w-16"
               />
             ) : (
               <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-amber-500/50 bg-gradient-to-br from-amber-200 to-orange-400 text-3xl font-bold text-[#502316] shadow-lg sm:h-16 sm:w-16">
-                ॐ
+                {siteConfig.brandName?.charAt(0) || "ॐ"}
               </span>
             )}
 
             <span>
               <span className="block text-xl font-extrabold tracking-tight text-amber-100 transition-colors group-hover:text-amber-300 sm:text-2xl">
-                Shri Radhe Krishna
+                {siteConfig.brandName || "EstateLuxe"}
               </span>
 
               <span className="mt-1 block text-xs font-medium tracking-wider text-amber-400">
-                Radhe Radhe • Shubh Mangal
+                {siteConfig.tagline || "Find Your Perfect Place"}
               </span>
-
             </span>
           </Link>
 
@@ -208,8 +210,7 @@ export default function Footer() {
       <div className="border-t border-amber-900/50 bg-black/20">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-5 py-5 text-center sm:px-6 md:flex-row md:px-8 md:text-left">
           <p className="text-xs leading-6 text-orange-100/60">
-            © {new Date().getFullYear()} Shri Radhe Krishna. All
-            rights reserved.
+           © {new Date().getFullYear()} {siteConfig.brandName}. All rights reserved.
           </p>
 
           <p className="text-xs font-medium tracking-wide text-amber-400">

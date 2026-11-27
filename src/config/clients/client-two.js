@@ -1,11 +1,12 @@
+
 const clientTwo = {
   clientId: 'client-two',
 
   brandName: 'PrimeNest Realty',
   tagline: 'Your Next Move Starts Here',
 
-  logo: '/clients/client-two/logo.png',
-  favicon: '/favicon.svg',
+  logo: `${import.meta.env.BASE_URL}./cottage-logo.png`,
+  favicon: `${import.meta.env.BASE_URL}favicon.svg`,
 
   theme: {
     primary: '#234B35',
@@ -22,16 +23,10 @@ const clientTwo = {
   },
 
   contact: {
-  phone: '+91-APNA-NUMBER',
-  email: 'apna-email@example.com',
-  address: 'Office Address, City, India',
-},
-
-social: {
-  instagram: 'https://instagram.com/yourpage',
-  facebook: 'https://facebook.com/yourpage',
-  linkedin: 'https://linkedin.com/company/yourcompany',
-},
+    phone: '+91-APNA-NUMBER',
+    email: 'apna-email@example.com',
+    address: 'Office Address, City, India',
+  },
 
   navigation: [
     { label: 'Home', path: '/' },
