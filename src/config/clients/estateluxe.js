@@ -4,7 +4,7 @@ const estateLuxe = {
   brandName: 'EstateLuxe',
   tagline: 'Find Your Perfect Place',
 
-  logo: '/clients/client-one/logo.png',
+  logo: `${import.meta.env.BASE_URL}clients/client-one/logo.png`,
   favicon: '/favicon.svg',
 
   theme: {
